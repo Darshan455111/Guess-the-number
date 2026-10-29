@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f0ff">
+    <title>Guess It! | Number Challenge</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+    <div class="background-glow glow-three"></div>
+
+    <main class="game-container">
+        <header class="topbar">
+            <a href="#" class="brand">
+                <span class="brand-icon">✳</span>
+                GUESS<span class="brand-accent">IT</span>
+            </a>
+
+            <span class="status">
+                <span class="status-dot"></span>
+                READY TO PLAY
+            </span>
+        </header>
+
+        <section class="hero">
+            <div class="eyebrow">
+                <span>✦</span> THE ULTIMATE NUMBER CHALLENGE
+            </div>
+
+            <h1>Trust your<br><span>instincts.</span></h1>
+
+            <p class="subtitle">
+                One secret number. Endless possibilities.
+                Can you crack the code?
+            </p>
+        </section>
+
+        <section class="game-card">
+            <div class="card-top">
+                <div>
+                    <p class="section-label">YOUR MISSION</p>
+                    <h2>Crack the number</h2>
+                </div>
+
+                <div class="dice-icon">🎲</div>
+            </div>
+
+            <div class="range-box">
+                <label for="maxRange">CHOOSE YOUR CHALLENGE RANGE</label>
+
+                <div class="range-input-row">
+                    <span class="range-prefix">1 —</span>
+                    <input
+                        type="number"
+                        id="maxRange"
+                        value="100"
+                        min="2"
+                        max="1000000"
+                    >
+                </div>
+
+                <p class="helper">
+                    Choose a maximum number between 2 and 1,000,000.
+                </p>
+            </div>
+
+            <button type="button" id="startBtn" class="primary-btn">
+                <span>Start Game</span>
+                <span class="button-arrow">↗</span>
+            </button>
+
+            <div id="gameArea" class="game-area hidden">
+                <div class="secret-range">
+                    <span>THE SECRET NUMBER IS BETWEEN</span>
+
+                    <strong>
+                        <span class="range-min">1</span>
+                        <span class="range-separator">—</span>
+                        <b id="rangeDisplay">100</b>
+                    </strong>
+
+                    <div class="range-decoration">
+                        Find the number to win!
+                    </div>
+                </div>
+
+                <label for="guessInput" class="guess-label">
+                    WHAT'S YOUR GUESS?
+                </label>
+
+                <form id="guessForm">
+                    <input
+                        type="number"
+                        id="guessInput"
+                        placeholder="Enter a number..."
+                        autocomplete="off"
+                        required
+                    >
+
+                    <button type="submit" class="guess-btn">
+                        Guess <span>→</span>
+                    </button>
+                </form>
+
+                <div
+                    id="message"
+                    class="message"
+                    role="status"
+                    aria-live="polite"
+                >
+                    Make your first guess. You've got this!
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box">
+                        <div class="stat-icon attempts-icon">🎯</div>
+                        <div>
+                            <span class="stat-label">ATTEMPTS</span>
+                            <strong id="attempts">0</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-box">
+                        <div class="stat-icon range-icon">📊</div>
+                        <div>
+                            <span class="stat-label">POSSIBLE RANGE</span>
+                            <strong id="remainingRange">1–100</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <button
+                    type="button"
+                    id="restartBtn"
+                    class="secondary-btn hidden"
+                >
+                    <span>↻</span> Play Again
+                </button>
+            </div>
+        </section>
+
+        <footer>
+            <span>✦ BUILT FOR CURIOUS MINDS</span>
+            <span>THINK · GUESS · WIN</span>
+        </footer>
+    </main>
+</body>
+</html>
